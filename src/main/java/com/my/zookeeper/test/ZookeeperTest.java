@@ -20,15 +20,15 @@ public class ZookeeperTest {
 
 	protected static final Logger logger = Logger.getLogger(ZookeeperTest.class);
 
-	/** zookeeper�����ӵ�ַ */
+	/** zookeeper连接地址 */
 	public static final String CONNECT_STRING = "127.0.0.1:2181";
 
-	/** zookeeper ��ʱʱ�� */
+	/** zookeeper 超时时间*/
 	public static final int SESSION_TIME_OUT = 50*1000;
 
-	/** �ӽڵ����� */
+	/** 创建的节点名称 */
 	public static final String PATH = "/test1";
-	/** znodeTest ��value */
+	/** znodeTest 节点对应的value */
 	public static final String data = "测试数据";
 
 	
@@ -59,7 +59,7 @@ public class ZookeeperTest {
 	}
 
 	/**
-	 * ��ȡzookeeper��ʵ������
+	 * 获取zookeeper实例
 	 * 
 	 * @return
 	 */
@@ -84,7 +84,7 @@ public class ZookeeperTest {
 		return zooKeeper;
 	}
 
-	/** �ر�zookeeper ���ӵĴ����� */
+	/** 停止zookeeper 服务 */
 	public static void stopZooKeeper(ZooKeeper zooKeeper) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("stopZooKeeper(ZooKeeper) - start"); //$NON-NLS-1$
@@ -105,7 +105,7 @@ public class ZookeeperTest {
 		}
 	}
 
-	/** zookeeper�����ڵ�Ĵ����� */
+	/**创建zookeeper节点的处理方法*/
 	public static void createZnode(ZooKeeper zooKeeper) {
 		if (logger.isDebugEnabled()) {
 			logger.debug("createZnode(ZooKeeper) - start"); //$NON-NLS-1$
@@ -131,7 +131,7 @@ public class ZookeeperTest {
 	}
 
 	/**
-	 * ��ȡ�ڵ�value�Ĵ�����
+	 * 获取zookeeper节点值的处理方法
 	 * 
 	 * @param zooKeeper
 	 * @return
